@@ -6,4 +6,7 @@ module.exports = function(app) {
 
     app.route('/')
         .get(jsonData.index);
+
+    app.route('/getData')
+        .get(jsonData.getAlldata);
 }
