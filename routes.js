@@ -12,4 +12,7 @@ module.exports = function(app) {
     
     app.route('/getDataByid/:id')
         .get(jsonData.getDataByid);
+    
+    app.route('/kirim')
+        .post(jsonData.sendData);
 }
