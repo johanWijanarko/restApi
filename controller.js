@@ -34,14 +34,30 @@ exports.getDataByid = function(req, res){
 }
 
 exports.sendData = function(req, res){
-    let nama_kriteria = req.body.nama_kriteria;
-    let bobot = req.body.bobot;
-    let id = crypto.randomBytes(16).toString("hex");
+    const nama_kriteria = req.body.nama_kriteria;
+    const bobot = req.body.bobot;
+    const id = crypto.randomBytes(16).toString("hex");
     const del_st = 1;
     // console.log(id);
 
     connection.query('insert into tb_kriteria (id_kriteria, kriteria, bobot, del_st) values(?,?,?,?)', [id, nama_kriteria, bobot, del_st],
        function(error, rows, fields){
+        if(error){
+            console.log(error)
+        } else {
+            response.ok(rows, res)
+        }
+    })
+}
+
+exports.updateData = function(req, res){
+    const id = req.body.id;
+    const nama_kriteria = req.body.nama_kriteria;
+    const bobot = req.body.bobot;
+
+    console.log(bobot);
+    connection.query('update tb_kriteria set kriteria=?, bobot=? where  id_kriteria = ?', [ nama_kriteria, bobot, id],
+    function(error, rows, fields){
         if(error){
             console.log(error)
         } else {
