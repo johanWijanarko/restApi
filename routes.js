@@ -15,4 +15,6 @@ module.exports = function(app) {
     
     app.route('/sendData')
         .post(jsonData.sendData);
+    app.route('/updateData')
+        .put(jsonData.updateData)
 }
