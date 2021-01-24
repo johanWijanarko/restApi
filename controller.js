@@ -17,3 +17,16 @@ exports.getAlldata = function(req, res){
         }
     })
 }
+
+// getdata by id
+
+exports.getDataByid = function(req, res){
+    let id = req.params.id;
+    connection.query('SELECT * from tb_kriteria where del_st = 1 and id_kriteria =?'[id], function(error, rows, fields){
+        if(error){
+            console.log(error)
+        } else {
+            response.ok(rows, res)
+        }
+    })
+}
