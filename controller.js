@@ -22,7 +22,7 @@ exports.getAlldata = function(req, res){
 
 exports.getDataByid = function(req, res){
     let id = req.params.id;
-    connection.query('SELECT * from tb_kriteria where del_st = 1 and id_kriteria =?'[id], function(error, rows, fields){
+    connection.query('SELECT * from tb_kriteria where del_st = 1 and id_kriteria = ?',[id], function(error, rows, fields){
         if(error){
             console.log(error)
         } else {
