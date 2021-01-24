@@ -1,0 +1,19 @@
+{
+  "name": "restapi",
+  "version": "1.0.0",
+  "description": "api sederhana",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johanWijanarko/restApi.git"
+  },
+  "author": "johan wijanarko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johanWijanarko/restApi/issues"
+  },
+  "homepage": "https://github.com/johanWijanarko/restApi#readme"
+}
