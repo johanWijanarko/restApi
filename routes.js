@@ -9,4 +9,7 @@ module.exports = function(app) {
 
     app.route('/getData')
         .get(jsonData.getAlldata);
+    
+    app.route('/getDataByid/:id')
+        .get(jsonData.getDataByid);
 }
