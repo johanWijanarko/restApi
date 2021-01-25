@@ -65,3 +65,32 @@ exports.updateData = function(req, res){
         }
     })
 }
+
+exports.deleteData = function(req, res){
+    const id = req.body.id;
+    console.log(id);
+    connection.query('delete from tb_kriteria where id_kriteria=?', [id],
+    function (error, rows, fields){
+        if(error){
+            console.log(err)
+        } else {
+            response.ok('data berhasil di hapus', res)
+        }
+    })
+}
+
+
+
+
+exports.delete = function (res, req){
+    const id = req.body.id;
+    console.log(id);
+    connection.query('delete from tb_kriteria where id_kriteria=?', [id],
+    function (error, rows, fields){
+        if(error){
+            console.log(err)
+        } else {
+            response.ok('data berhasil di hapus', res)
+        }
+    })
+}
