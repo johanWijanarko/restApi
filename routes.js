@@ -15,6 +15,10 @@ module.exports = function(app) {
     
     app.route('/sendData')
         .post(jsonData.sendData);
+
     app.route('/updateData')
-        .put(jsonData.updateData)
+        .put(jsonData.updateData);
+
+    app.route('/deleteData')
+        .delete(jsonData.deleteData);
 }
